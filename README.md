@@ -43,7 +43,7 @@ List any 3rd party libraries, icons, graphics, or other assets you used in your 
 
 ## License
 
-Copyright [yyyy] [name of copyright owner]
+Copyright [2017] [Pavani Malli]
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
