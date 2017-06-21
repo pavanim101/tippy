@@ -17,10 +17,14 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var tipControl: UISegmentedControl!
-    
+  
+    @IBOutlet weak var barView: UIView!
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+   
+       self.blinkAnimation()
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,14 +35,25 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("view will appear")
+
         
         let defaults = UserDefaults.standard
         let tipValueIndex = defaults.integer(forKey: "default_tip_index")
         tipControl.selectedSegmentIndex = tipValueIndex;
         self.calculateTip(0)
+        
+        }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("view did appear")
+        self.barView.backgroundColor = UIColor(red: 1/255, green: 1/255, blue: 1/255, alpha: 1)
+        self.blinkAnimation()
+
+
     }
     
+
 
     @IBAction func onTap(_ sender: Any) {
         view.endEditing(true);
@@ -56,6 +71,14 @@ class ViewController: UIViewController {
         tipLabel.text = String(format: "$%.2f", tip)
         totalLabel.text = String(format: "$%.2f", total)
 
+    }
+    
+    func blinkAnimation () {
+        
+        UIView.animate(withDuration: 1.0, delay: 0, options:[.repeat, .autoreverse], animations: {
+            self.barView.backgroundColor = UIColor(red: 4/255, green: 135/255, blue: 255/255, alpha: 1)
+        }, completion:nil)
+        
     }
     
 }
