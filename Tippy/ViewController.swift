@@ -27,7 +27,18 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("view will appear")
+        
+        let defaults = UserDefaults.standard
+        let tipValueIndex = defaults.integer(forKey: "default_tip_index")
+        tipControl.selectedSegmentIndex = tipValueIndex;
+        self.calculateTip(0)
+    
+    }
+    
 
     @IBAction func onTap(_ sender: Any) {
         view.endEditing(true);
@@ -38,6 +49,7 @@ class ViewController: UIViewController {
         let tipPercentages = [0.18, 0.2, 0.25]
         
         let bill = Double(billField.text!) ?? 0
+        
         let tip = bill * tipPercentages[tipControl.selectedSegmentIndex]
         let total = bill + tip
         
@@ -45,7 +57,6 @@ class ViewController: UIViewController {
         totalLabel.text = String(format: "$%.2f", total)
 
     }
-    
     
 }
 
