@@ -63,7 +63,7 @@
                             <view contentMode="scaleToFill" misplaced="YES" id="d2q-ai-307">
                                 <rect key="frame" x="27" y="227" width="267" height="11"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Bill" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="O6v-FV-n6a">
                                 <rect key="frame" x="52" y="118" width="60" height="21"/>
@@ -94,6 +94,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="barView" destination="d2q-ai-307" id="ZBo-Hx-BNv"/>
                         <outlet property="billField" destination="yji-4S-zGo" id="YEu-sf-ulG"/>
                         <outlet property="tipControl" destination="Ygo-MI-PR8" id="u4Z-gX-5Ch"/>
                         <outlet property="tipLabel" destination="eXH-1v-bDN" id="gWi-KN-EzW"/>
